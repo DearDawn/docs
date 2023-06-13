@@ -2,14 +2,14 @@ CSS 圆形渐变边框，背景透明
 
 ## 读完我可以收获
 
-- CSS 圆形渐变边框的实现方式
+- CSS 圆形、圆角渐变边框的实现方式
 - background-clip、text-stroke 的使用
 
 ## 背景
 
-在网上找到的很多方式是通过 background 加渐变，然后再加个纯色背景对渐变进行覆盖，通过 background-clip 实现这种效果，但是想要背景透明，就没办法了。
+在网上找到的很多方式是通过 background 加渐变，然后再加个纯色背景对渐变进行覆盖，通过 background-clip 实现这种效果。这篇文章写的很好：【这篇文章】https://juejin.cn/post/6844903972281516045
 
-今天在思考背景如何部分透明的时候，突然想到了 background-clip 文字裁剪，发现这个就能实现我想要的效果。
+但是想要背景透明就没办法了。今天在思考如何让背景部分透明的时候，突然想到了 background-clip 文字裁剪，发现这个就能实现我想要的效果。
 
 关于 background-clip 属性，是用来设置背景的裁剪范围的，主要分为 border-box, content-box, padding-box, text, 我们此处使用的就是 text。详细可以参考：
 
@@ -30,6 +30,8 @@ https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-clip
 这时我们会发现边框有些粗，可以通过 font-weight 进行调节，但是粗细范围很有限，这里我发现了另一个奇妙的属性：text-stroke，我们可以通过它调节文字描边宽度，font-weight 设为400 即可。
 
 对于大小的调节，如果 font-size 不能满足要求，我们可以借助 transform：scale 实现尺寸调整。
+
+写了一个 demo 可以看这里
 
 
 

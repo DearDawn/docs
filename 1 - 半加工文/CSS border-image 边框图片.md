@@ -1,4 +1,4 @@
-CSS 小技巧 —— 气泡适应文案（border-image 用起来）
+CSS border-image 边框图片
 
 ## 读完我可以收获
 
@@ -36,17 +36,25 @@ CSS 小技巧 —— 气泡适应文案（border-image 用起来）
 
 缩写时为：border：  border-image-source border-image-slice / border-image-width / border-image-outset / border-image-repeat
 
+下面用一张图感受下效果，也可以点击这里去体验
+
+【border-image 各属性变化】
+
 ## 使用场景
 
-花边
+花边，利用 border-image 的平铺特性，可以实现比较精美的花边效果。
 
-聊天气泡
+【花边图片】
+
+聊天气泡，相比 background，border-image 的优势在于可以适应内容的高度，不会引起图片两端的变形。更多关于聊天旗袍的实现方式可以查看：这篇文章。
+
+【聊天气泡】
 
 ## 注意事项
 
-border-image 作用在 border 上，所以适用前提是设置了 boder，boder-width 和 border-style 都需要设置，border-color 建议设置为 transparent
+border-image 作用在 border 上，所以使用的前提是设置了 boder，boder-width 和 border-style 都需要设置，border-color 建议设置为 transparent
 
-border-radius 不会影响 border-image 的表现，如果有圆角的情况，需要更改图片，或使用其他方式
+border-radius 不会影响 border-image 的表现，所以如果有圆角的需求，需要更改图片，或使用其他方式：其他方式可以参考：这篇文章。
 
 ○ 加 background-clip
 
