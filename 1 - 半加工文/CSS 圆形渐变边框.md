@@ -7,6 +7,8 @@ CSS 圆形渐变边框，背景透明
 
 ## 背景
 
+![iShot_2023-06-21_16 (1)](../assets/iShot_2023-06-21_16%20(1).gif)
+
 在网上找到的很多方式是通过 background 加渐变，然后再加个纯色背景对渐变进行覆盖，通过 background-clip 实现这种效果。这篇文章写的很好：【这篇文章】https://juejin.cn/post/6844903972281516045
 
 但是想要背景透明就没办法了。今天在思考如何让背景部分透明的时候，突然想到了 background-clip 文字裁剪，发现这个就能实现我想要的效果。
@@ -23,7 +25,45 @@ https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-clip
 
 首先实现文字背景遮罩
 
-【代码】【效果】
+```less
+.box {
+  margin: 0 50px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: visible;
+  font-size: 50px;
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: white 2px;
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    font-family: Arial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(135deg, #43c6ac, #f8ffae);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke-color: transparent;
+  }
+}
+```
+
+
+
+![image-20230621162656212](../assets/image-20230621162656212.png)
 
 然后利用 after 伪元素叠加到我们的盒子的边框上。
 
@@ -31,9 +71,11 @@ https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-clip
 
 对于大小的调节，如果 font-size 不能满足要求，我们可以借助 transform：scale 实现尺寸调整。
 
-写了一个 demo 可以看这里
+## 总结 & 源码
 
+源码在这里，有需要的可以参考一下：
 
+https://code.juejin.cn/pen/7247051025881202745
 
 ## 注意事项
 
