@@ -25,7 +25,7 @@ CSS border-image 边框图片
 
 2.3 border-image-width: 图像的宽度，值为相对于边框的倍数，默认是 1（与边框宽度一样），一般不需要调整。
 
-2.4 border-image-outset: 图像向外偏移的宽度，超出边框盒的大小，不会影响布局，就像 outline 一样
+2.4 border-image-outset: 图像向外偏移的宽度，超出边框盒的大小，不会影响布局，效果就像 outline 一样
 
 2.5 border-image-repeat: 边框图像的填充规则，不会影响四个顶点的图像，可以对横竖分别设置规则
 
@@ -46,7 +46,7 @@ CSS border-image 边框图片
 
 【花边图片】
 
-聊天气泡，相比 background，border-image 的优势在于可以适应内容的高度，不会引起图片两端的变形。更多关于聊天旗袍的实现方式可以查看：这篇文章。
+聊天气泡，相比 background，border-image 的优势在于可以适应内容的高度，不会引起图片两端的变形。更多关于聊天气泡的实现方式可以查看：这篇文章。
 
 【聊天气泡】
 
